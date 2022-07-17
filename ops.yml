@@ -1,5 +1,5 @@
 services:
-  - name: sample-app:0.6.9
+  - name: sample-app:0.6.8
     description: preview of sample app
     run: node index.js
     port: [ '8080:8080' ]
@@ -22,7 +22,7 @@ services:
      - publish
      - start
 pipelines:
-  - name: sample-app-pipeline:0.6.9
+  - name: sample-app-pipeline:0.6.8
     description: build a release for deployment on fargate
     env:
       static:
