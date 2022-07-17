@@ -27,6 +27,10 @@ pipelines:
     env:
       static:
         - DEBIAN_FRONTEND=noninteractive
+        - ORG=thecraftman
+        - REPO=sample-app
+        - REF=main
+        - STACK_TYPE=aws-ecs-fargate
       secrets:
         - GITHUB_TOKEN
         - AWS_ACCESS_KEY_ID
@@ -50,6 +54,6 @@ pipelines:
           - git clone https://$GITHUB_TOKEN:x-oauth-basic@github.com/$ORG/$REPO
           - cd $REPO && ls -asl
           - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $AWS_ACCOUNT_NUMBER.dkr.ecr.us-east-1.amazonaws.com/$REPO
-          - docker build -t $AWS_ACCOUNT_NUMBER.dkr.ecr.us-east-1.amazonaws.com/$REPO:$REF .
-          - docker push $AWS_ACCOUNT_NUMBER.dkr.ecr.us-east-1.amazonaws.com/$REPO:$REF
+          - docker build -t $AWS_ACCOUNT_NUMBER.dkr.ecr.us-east-1.amazonaws.com/$REPO-$STACK_TYPE:$REF .
+          - docker push $AWS_ACCOUNT_NUMBER.dkr.ecr.us-east-1.amazonaws.com/$REPO-$STACK_TYPE:$REF
 
