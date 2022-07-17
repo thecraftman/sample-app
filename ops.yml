@@ -53,7 +53,7 @@ pipelines:
           - aws --version
           - git clone https://$GITHUB_TOKEN:x-oauth-basic@github.com/$ORG/$REPO
           - cd $REPO && ls -asl
-          - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $AWS_ACCOUNT_NUMBER.dkr.ecr.us-east-1.amazonaws.com/$REPO
-          - docker build -t $AWS_ACCOUNT_NUMBER.dkr.ecr.us-east-1.amazonaws.com/$REPO-$STACK_TYPE:$REF .
-          - docker push $AWS_ACCOUNT_NUMBER.dkr.ecr.us-east-1.amazonaws.com/$REPO-$STACK_TYPE:$REF
+          - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin $AWS_ACCOUNT_NUMBER.dkr.ecr.us-east-2.amazonaws.com/$REPO
+          - docker build -t $AWS_ACCOUNT_NUMBER.dkr.ecr.us-east-2.amazonaws.com/$REPO-$STACK_TYPE:$REF .
+          - docker push $AWS_ACCOUNT_NUMBER.dkr.ecr.us-east-2.amazonaws.com/$REPO-$STACK_TYPE:$REF
 
