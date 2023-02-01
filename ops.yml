@@ -1,26 +1,3 @@
-services:
-  - name: sample-app:0.7.2
-    description: preview of sample app
-    run: node index.js
-    port: [ '8080:8080' ]
-    domain: ""
-    env:
-      static:
-        - PORT=8080
-        - DB_HOST=localhost
-        - DB_PORT=3600
-        - DB_USER=fake
-      secrets:
-        - SLACK_SIGNING_SECRET
-        - SLACK_BOT_TOKEN
-    events:
-     - "github:thecraftman/sample-app:pull_request.merged"
-     - "github:thecraftman/sample-app:pull_request.opened"
-     - "github:thecraftman/sample-app:pull_request.synchronize"
-    trigger:
-     - build
-     - publish
-     - start
 pipelines:
   - name: sample-app-pipeline:0.7.1
     description: build a release for deployment on fargate
