@@ -1,2 +1,2 @@
 # sample-app
-Deploy a sample blockchain app on a Developer Control Plane
+Deploy a sample app on CTO.ai Developer Control Plane
