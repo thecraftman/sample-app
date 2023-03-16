@@ -28,7 +28,7 @@ connection.connect(function(err) {
 */
 const api = express()
 api.get('/', (req, res) => {
-  res.send('"precedingHash": "f556af85a25f2883d267824t247652467r4117f3a82f6c9e2d8bd897510c13ec14e61f","hash": "0000ffaf7b9ae573a9cb3ba606b78dc45a8944ce6ffb0fcbee505b942d8b3e05","nonce": 65066\n')
+  res.send('"precedingHash": "f556af85a478667244267sfjhf2883d267824t247652467r4117f3a82f6c9e2d8bd897510c13ec14e61f","hash": "0000ffaf7b9ae573a9cb3ba606b78dc45a8944ce6ffb0fcbee505b942d8b3e05","nonce": 65066\n')
 })
 
 api.listen(PORT, HOST)
