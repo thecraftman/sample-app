@@ -1,13 +1,13 @@
 version: "1"
 pipelines:
-  - name: pr-comments-pr-opened:0.1.0
-    description: pr comment pr opened
+  - name: build-depenencies:0.1.0
+    description: build dependencies
     events:
       - "github:thecraftman/sample-app:pull_request.opened"
     jobs:
-      - name: pr-comments-pr-opened-build
-        description: example build step
+      - name: dependencies-packages-build
+        description: build dependencies
         packages:
           - git
         steps:
-          - echo "pull request opened" 
+          - echo "build dependencies"  
