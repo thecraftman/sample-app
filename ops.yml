@@ -1,5 +1,17 @@
 version: "1"
 pipelines:
+  build-dependencies-1
+  - name: build-depenencies:0.1.0
+    description: build dependencies
+    events:
+      - "github:thecraftman/sample-app:pull_request.opened"
+    jobs:
+      - name: dependencies-packages-build
+        description: build dependencies
+        packages:
+          - git
+        steps:
+          - echo "build dependencies"
   - name: automated-tests:0.1.0
     description: build automated tests
     events:
