@@ -6,6 +6,14 @@ COPY package.json ./
 COPY yarn.lock ./
 
 RUN yarn install
+RUN npm ci --only=production
+
+ENV NODE_ENV=production
+
+RUN npm run build
+
+
+FROM base as test
 
 ADD . .
 
